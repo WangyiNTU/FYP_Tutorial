@@ -1,3 +1,3 @@
-# Final Year Project Tutorials for undergraduate and MSc students.
+# Final Year Project Tutorials for undergraduate students.
 
 Please find your topic.
