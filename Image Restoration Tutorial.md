@@ -32,7 +32,7 @@ the corresponding hazy image.
    - **Datasets**: Use existing datasets or create your own. Some popular datasets include:
      - **Dehazing Datasets**: 
        - [ [RESIDE]](https://sites.google.com/view/reside-dehaze-datasets/reside-v0): RESIDE highlights diverse data sources and image contents, and is divided into five subsets, each serving different training or evaluation purposes.
-       - [[HAZE4K]](https://github.com/liuye123321/DMT-Net): Haze4k is a synthesized dataset with 4,000 hazy images, in which each hazy image ... latent clean image, a transmission map, and an atmospheric light ma.
+       - [[HAZE4K]](https://github.com/liuye123321/DMT-Net): Haze4k is a synthesized dataset with 4,000 hazy images, in which each hazy image has the associate ground truths of a latent clean image, a transmission map, and an atmospheric light ma.
 
 ### 3. **Preprocessing**
    - **Data Augmentation**: Apply techniques such as rotation, scaling, and flipping to increase the diversity of your training data.Here is a popular augmentation library:[Albumentations documentation](https://albumentations.ai/docs/)
