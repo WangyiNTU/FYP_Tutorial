@@ -68,12 +68,7 @@ Create a new conda environment and install dependencies
 ### 1. Environment
 Create a new conda environment and install dependencies.
 
-Sometimes you may encounter errors, package conflicts, and other issues. Please be patient and use Google to search for solutions
-
-**Tutorial Steps:**
-- Install mediapipe.
-- Use the hand tracking solution provided by Mediapipe to detect hands in images or video streams.
-- Check the doc for hand detection and pose estimation examples and usage: [mediapipe documentation for hands landmark](https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker/python)
+Sometimes you may encounter errors, package conflicts, and other issues. Please be patient and use Google to search for solutions.
 
 ### 2. Data Preparation
 
