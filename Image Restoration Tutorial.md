@@ -1,4 +1,4 @@
-# Image Restoration based on deep learning Related Vision Overall Guidance
+# Image Restoration Related Vision Overall Guidance
 
 For the task of image restoration, there are several Python packages and libraries that you can use. Here are some popular ones along with brief tutorials on how to get started.
 
