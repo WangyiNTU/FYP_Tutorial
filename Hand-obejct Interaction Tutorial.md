@@ -9,36 +9,31 @@ There are several official guidelines and resources provided by reputable organi
 ### **[1.3 Pytorch Intro and Basics](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section02_pytorch_basics>)**
 ### **[1.4 Multi-Layer Perceptron for Classification and Non-Linear Regression](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section03_pytorch_mlp>)**
 ### **[1.5 Convolutions and CNNs](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section04_pytorch_cnn>)**
-### **[1.6 Transfer Learning](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section05_transfer_learning>)**
-### **[1.7 Pytorch Tools and Training Techniques](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section06_pretraining_augmentations>)**
-### **[1.8 Autoencoders and Representation Learning](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section07_autoencoders>)**
-### **[1.9 Bounding Box Detection and Image Segmentation](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section08_detection>)**
-### **[1.10 Image Generation](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section09_generation>)**
-### **[1.11 Trained Model Interpretation](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section10_interpretation>)**
-### **[1.12 Reinforcement Learning](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section11_rl>)**
-### **[1.13 Sequential Data](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section12_sequential>)**
-### **[1.14 Attention](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section13_attention>)**
-### **[1.15 Transformer](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section14_transformers>)**
-### **[1.16 Deploying Models](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section15_deploying_models>)**
+### **[1.6 Pytorch Tools and Training Techniques](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section06_pretraining_augmentations>)**
+### **[1.7 Bounding Box Detection and Image Segmentation](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section08_detection>)**
+### **[1.8 Sequential Data](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section12_sequential>)**
+### **[1.9 Attention](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section13_attention>)**
+### **[1.10 Transformer](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section14_transformers>)**
+### **[1.11 Deploying Models](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section15_deploying_models>)**
 
 ## Hand and Object Perception and Pose Estiamtion:Problem Modeling
 Modeling hand and object perception and pose estimation is a complex task that involves several steps, including data collection, model selection, training, and evaluation. Here’s a structured approach to tackle this problem:
 
-### 1. **Define the Problem**
+### 2. **Define the Problem**
    - **Hand Detection**: Identify and locate hands in images or video streams.
    - **Object Detection**: Identify and locate objects interacting in the same scene with hands.
    - **Pose Estimation**: Estimate the pose of the hand and the object, which includes the hand joint position and articulation with object rigid pose.
 
-Hand pose estimation is aAs with human pose estimation, the position of the pose (2D/3D keypoint) is estimated given a close-up image of the hand (usually 21 joint keypoints).
+Hand pose estimation is similar to human pose estimation, predicting the position of the joints (usually 21 2D/3D keypoints) with a close-up image of the hands.
 
-![image.png](attachment:f224d440-94ff-46a3-90ff-298ba7b62622.png)
+![image.png](attachment:Images/1.png)
 
 Fig1: Visualization of modeling hand with 14, 16 and 21 joints as used in NYU :[1](https://dl.acm.org/doi/10.1145/2629500),
 ICVL :[2](https://ieeexplore.ieee.org/document/6909879), and MSRA :[3](https://ieeexplore.ieee.org/document/6909541) datasets. 
 
 The following diagram shows a classic implementation (heatmap model):
 
-![image.png](attachment:88bd0cf0-4126-41e5-9e03-2b95ef4540a2.png)
+![image.png](Images/2.png)
 
 Fig2: Architecture of V2V-PoseNet network using 3D CNN as encoder and decoder.
 Originally used in [4](https://openaccess.thecvf.com/content_cvpr_2018/papers/Moon_V2V-PoseNet_Voxel-to-Voxel_Prediction_CVPR_2018_paper.pdf).
@@ -53,7 +48,7 @@ Originally used in [4](https://openaccess.thecvf.com/content_cvpr_2018/papers/Mo
 
 **Here** is one of a classific example estimating hand pose with MANO:
 
-![image.png](attachment:9c719ccc-dd70-47d2-afdb-97e81b9dae7a.png)
+![image.png](Images/3.png)
 
 Fig2: Pipeline of HaMeR.
 Originally used in [7](https://geopavlakos.github.io/hamer/).
@@ -62,11 +57,11 @@ Originally used in [7](https://geopavlakos.github.io/hamer/).
 
 **The** pose estimation problem described in this tutorial is often referred to in computer vision terminology as the perspective N-point problem, or PNP. As we will see in more detail in the following sections, in this problem our goal is to find the pose of an object when the camera is calibrated, we know the position of n three-dimensional points on the object and the corresponding two-dimensional projection in the image.
 
-![image.png](attachment:0db1e546-96ff-494f-83e4-4a4763a0c276.png)
+![image.png](Images/4.png)
 
 Fig3：6-DoF pose estimating demo, originally used in [8](https://arxiv.org/pdf/2408.03225)
 
-### 2. **Data Collection**
+### 3. **Data Collection**
    - **Datasets**: Use existing datasets or create your own. Some popular datasets include:
      - **Hand and object interaction Datasets**: 
        - [InterHands2.6M](https://mks0601.github.io/InterHand2.6M/): A Dataset and Baseline for 3D Interacting Hand Pose Estimation from a Single RGB Image.
@@ -74,99 +69,27 @@ Fig3：6-DoF pose estimating demo, originally used in [8](https://arxiv.org/pdf/
        - [HO3D](https://github.com/shreyashampali/ho3d): A datasets with 3D pose annotations for hands and object under severe occlusions from each other.
        - [AssemblyHands](https://assemblyhands.github.io/):a large-scale benchmark dataset with accurate 3D hand pose annotations.
 
-### 3. **Preprocessing**
-   - **Data Augmentation**: Apply techniques such as rotation, scaling, and flipping to increase the diversity of your training data.Here is a popular augmentation library:[Albumentations documentation](https://albumentations.ai/docs/)
-   - **Normalization**: Normalize images to ensure consistent input to the model.
+### 4. **Preprocessing**
+   - **Data Augmentation**: Apply techniques such as rotation, scaling, and flipping to increase the diversity of your training data. You can use real-time enhancement while training with augmentation library:[Albumentations documentation](https://albumentations.ai/docs/)
+   - **Normalization**: Normalize images to ensure consistent input to the model(image format and size etc.).
 
-### 4. **Model Selection**
-   - **Backbone:Convolutional Neural Networks (CNNs)**: For image feature extraction.
-   - **Backbone:Transformer-based (ViTs)**: For image feature extraction.
-[pretrained backbone models timm](https://github.com/pprp/timm), [pretrained backbone models torchvision](https://pytorch.org/vision/stable/models.html)
+### 5. **Model Selection**
+   **Models**:You can test the following models on datasets above.
+   - Baseline Model for Hand Detection [Openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose)
+   - Baseline Model for HOI Pose Estimation [HOPE](https://github.com/bardiadoosti/HOPE)
+   - SOTA HOI Pose Estimation [HOISDF](https://github.com/amathislab/HOISDF)
 
-### 5. **Model Training**
-   - **Frameworks**: Use frameworks like TensorFlow or PyTorch to build and train your models.
-   - **Loss Functions**: Choose appropriate loss functions for hand and object detection tasks (e.g., cross-entropy loss for classification, mean squared error for regression,MVJPE).
+### 6. **Model Training**
+   - **Frameworks**: Use frameworks PyTorch to build and train your models.
+   - **Loss Functions**: Choose appropriate loss functions for hand and object detection tasks (e.g., cross-entropy loss for classification, mean squared error for regression).
    - **Training Process**: Split your dataset into training, validation, and test sets. Train your model using the training set and validate it using the validation set.
 
-### 6. **Evaluation**
+### 7. **Evaluation**
    - **Metrics**: Use metrics such as Intersection over Union (IoU) for object detection, Mean Per Joint Position Error (MPJPE) to evaluate the performance of your hand pose estimation, object center error(OCE) and mean corner error(MCE) for object pose estimation.
-   - **Visualization**: Visualize the results to understand how well the model is performing in terms of hand and object detection and pose estimation.
+   - **Visualization**: Visualize the results to understand how well the model is performing in terms of hand and object detection and pose estimation.[Visualizer](https://github.com/isarandi/poseviz)
 
-## Apply Hand and Object Detection
-
-### 1. OpenCV
-OpenCV (Open Source Computer Vision Library) is a powerful library for computer vision tasks, including object detection.
-
-**Tutorial Steps:**
-- Install openCV
-- Follow the instructions on [hand-gesture-recognition-opencv-project](https://github.com/mahaveerverma/hand-gesture-recognition-opencv).
-- Load an image or video stream and apply the detection model.
-
-### 2. Mediapipe
-Mediapipe is a framework developed by Google that provides ready-to-use solutions for hand tracking and object detection.
-
-**Tutorial Steps:**
-- Install mediapipe.
-- Use the hand tracking solution provided by Mediapipe to detect hands in images or video streams.
-- Check the doc for hand detection and pose estimation examples and usage:[mediapipe documentation for hands landmark](https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker/python)
-
-### 3. PyTorch
-PyTorch is another deep learning framework that can be used for custom object detection models.
-
-**Tutorial Steps:**
-- Install PyTorch:
-- Use pre-trained models from the `torchvision` library for object detection.
-- Refer to the [PyTorch Object Detection tutorial](https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html) for guidance.
-
-### 4. Hand Pose Detection with Openpose
-
-OpenPose is a popular library for real-time multi-person keypoint detection, primarily used for human pose estimation. It can detect body, hand, facial, and foot keypoints in images and videos. Here’s a brief tutorial on how to get started with OpenPose:
-
-### openpose
-
-1. **System Requirements**: Ensure you have a compatible system (Linux, Windows, or macOS) with a GPU for better performance.
-2. **Clone the OpenPose Repository**:
-3. **Install Dependencies**: Follow the installation instructions in the repository's README file. You will need other supporting packages.
-   [Install guidance](https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/installation/0_index.md#windows-portable-demo)
-
-## Apply HOI Pose Estimation Project
-You can follow the instructions on github to apply the SOTA method on HOI pose estimation task: [HOISDF](https://github.com/amathislab/HOISDF)
-(All following instructions are from the Repo)
-
-
-```python
-git clone git@github.com:amathislab/HOISDF.git
-```
-
-clone the Repo
-
-
-```python
-conda create --name hoisdf python=3.9
-conda activate hoisdf
-# install the pytorch version compatible with the your cuda version
-pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
-pip install -r requirements.txt
-```
-
-Set up the environment
-
-download MANO pkl (MANO_LEFT.pkl and MANO_RIGHT.pkl) [here](https://mano.is.tue.mpg.de/) and put them into the folder(tool/mano_models)
-
-Download the YCB models from [here](https://rse-lab.cs.washington.edu/projects/posecnn/) and set object_models_dir in config.py to point to the dataset folder. Download the processed annotation files for both datasets from [here](https://zenodo.org/records/11668766) and set annotation_dir in config.py to point to the processed data folder.Download the dataset from [here](https://dex-ycb.github.io/) and set dexycb_data_dir in config.py to point to the dataset folder.Download the processed SDF files for DexYCB test set from [here](https://zenodo.org/records/11668766) and for the DexYCB full test set from [here](https://zenodo.org/records/13228003). Since the processed SDF files for DexYCB training set and full training set are too big. We unfortunately cannot share them on Zonado and would encourage you to generate them by yourself.
-Follow the[ AlignSD](https://github.com/zerchen/AlignSDF?tab=readme-ov-file#dataset-preprocessing)F repo to generate the original SDF files. Then use the tool/pre_process_sdf.py script to process the SDF data.
-
-you can download the weights from the orginal links provided from the repo [here](https://zenodo.org/records/11668766) and put them in the ckpts folder.
-
-modify the setting in config.py to 'dexycb' and Run the following command 
-
-
-```python
-python main/test.py --ckpt_path ckpts/dexycb/snapshot_dexycb.pth.tar  # for dexycb setting
-python main/test.py --ckpt_path ckpts/dexycb_full/snapshot_dexycb_full.pth.tar  # for dexycb_full setting
-```
-
-The results are dumped into a results.txt file in the folder containing the checkpoint.
+## Implemention
+You can follow the links to implement the project [HOPE](https://github.com/bardiadoosti/HOPE) or [HOISDF](https://github.com/amathislab/HOISDF)
 
 ## Reference
 ### ContactArt: Learning 3D Interaction Priors for Category-level Articulated Object and Hand Poses Estimation https://ieeexplore.ieee.org/abstract/document/10550760
