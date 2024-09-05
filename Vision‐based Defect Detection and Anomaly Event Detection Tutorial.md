@@ -15,18 +15,18 @@
 ### **[1.9 Transformer](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section14_transformers>)**
 ### **[1.10 Deploying Models](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section15_deploying_models>)**
 
-##  **2 Deepfake Detection** 
-### Deepfake detection on videos is a complex task that involves multiple steps, including dataset selection, model selection, training, and evaluation. The following is a structured approach to solve this problem:
-
+##  **2 Vision‐based Defect Detection and Anomaly Event Detection** 
+### Anomaly means a deviation from a rule or from what is regarded as standard, regular, or expected. The occurrence of anomalies is often challenging to predict, and the baneful influence is difficult to estimate without distinguishing them. An anomaly can be a minor defect in an industrial product, an unusual object in a driving scene, or an exceptional action in a video. The vision‐based defect detection and anomaly event detection is an important research topic, especially in the field of computer vision.
 ### **2.1 Define the Problem**
-   #### **2.1.1 Deepfake**: Deepfake is a technique that generates or modifies multimedia content by training deep neural networks to create highly realistic fake videos, audio, or images. Common methods include the following:
-   - #### **FaceSwap**. FaceSwap is a graph-based method for transferring facial regions from a source video to a target video.
+   #### **2.1.1 Defect Detection**: A defect means some inconsistent result with expectations that affects performance (not a forgery), which could some flaw rather than the exclusion of noise. Defect detection includes both target level and scenario level, target level e.g. surface defect detection, material defect detection etc. Examples of scenario-level defect detection are Small Obstacle Discovery, Fault Discovery, etc. Common methods based on deep learning include the following:
 
-   - #### **Face2Face**. Face2Face is a facial reconstruction system that transfers the expression of a source video to a target video while maintaining the identity of the target person.
+   - #### **Segmentation-Based**.  Transforms the input defect image into a pixel-wise prediction mask based on semantic segmentation.
 
-   - #### **Audio-visual Manipulation**. Tampering with the key words of the target person's words in the video and modifying the lip shape.
+   - #### **Object Detection**. Detect specific texture features in images to find defects.
 
-   #### **2.1.2 Deepfake Detection**: 
+   - #### **Generative Adversarial Network**. GAN models can generate a high quality and high diversity of defect image samples, improve the detection accuracy of surface defect detection models.
+
+   #### **2.1.2 Anomaly Event Detection**: Event-level Anomaly Detection.
 
    - #### **Frame Consistency Analysis**. Detects whether there are signs of forgery by analyzing the continuity and consistency between video frames.
 
