@@ -16,35 +16,32 @@
 ### **[1.10 Deploying Models](<https://github.com/LukeDitria/pytorch_tutorials/tree/main/section15_deploying_models>)**
 
 ##  **2 Vision‐based Defect Detection and Anomaly Event Detection** 
-### Anomaly means a deviation from a rule or from what is regarded as standard, regular, or expected. The occurrence of anomalies is often challenging to predict, and the baneful influence is difficult to estimate without distinguishing them. An anomaly can be a minor defect in an industrial product, an unusual object in a driving scene, or an exceptional action in a video. The vision‐based defect detection and anomaly event detection is an important research topic, especially in the field of computer vision.
+Anomaly means a deviation from a rule or from what is regarded as standard, regular, or expected. The occurrence of anomalies is often challenging to predict, and the baneful influence is difficult to estimate without distinguishing them. An anomaly can be a minor defect in an industrial product, an unusual object in a driving scene, or an exceptional action in a video. The vision‐based defect detection and anomaly event detection is an important research topic, especially in the field of computer vision.
 ### **2.1 Define the Problem**
-   #### **2.1.1 Defect Detection**: A defect means some inconsistent result with expectations that affects performance (not a forgery), which could some flaw rather than the exclusion of noise. Defect detection includes both target level and scenario level, target level e.g. surface defect detection, material defect detection etc. Examples of scenario-level defect detection are Small Obstacle Discovery, Fault Discovery, etc. Common methods based on deep learning include the following:
+   **2.1.1 Defect Detection**: A defect means some inconsistent result with expectations that affects performance (not a forgery), which could some flaw rather than the exclusion of noise. Defect detection includes both target level and scenario level, target level e.g. surface defect detection, material defect detection etc. Examples of scenario-level defect detection are Small Obstacle Discovery, Fault Discovery, etc. Common methods based on deep learning include the following:
 
-   - #### **Segmentation-Based**.  Transforms the input defect image into a pixel-wise prediction mask based on semantic segmentation.
+   - **Segmentation-Based**.  Transforms the input defect image into a pixel-wise prediction mask based on semantic segmentation.
 
-   - #### **Object Detection**. Detect specific texture features in images to find defects.
+   - **Object Detection**. Detect specific texture features in images to find defects.
 
-   - #### **Generative Adversarial Network**. GAN models can generate a high quality and high diversity of defect image samples, improve the detection accuracy of surface defect detection models.
+   - **Generative Adversarial Network**. GAN models can generate defect image samples to improve the detection accuracy of defect detection models.
 
-   #### **2.1.2 Anomaly Event Detection**: Event-level Anomaly Detection.
+   **2.1.2 Anomaly Event Detection**: Anomaly detection refers to the detection of anomalous events that occur in a scene. Anomalies persist continuously in space and time, so anomalous event detection is basically based on video or multimodal. Event-level anomaly detection is often used to find potential dangers in surveillance video, or sensitive elements in multimodal content, etc. Common methods include Context-Dependent Analysis, Pose Clustering, Frame Consistency Analysis, Teacher-student, Reconstruction, and so on. Depending on the training paradigm, these methods can be classified as supervised, weakly supervised and unsupervised. 
 
-   - #### **Frame Consistency Analysis**. Detects whether there are signs of forgery by analyzing the continuity and consistency between video frames.
-
-   - #### **Lighting and Shadow Analysis**. Detects inconsistencies in lighting and shadows in the video, as forged videos may have defects in these aspects.
-
-   - #### **Motion Trajectory Analysis**. Identifies unnatural motion patterns by analyzing the movement trajectory of objects or people in the video.
-
-   - #### **Audio-video synchronization analysis**. Detects whether the audio and video are synchronized, as forged videos may have problems with synchronization.
+   
 ### **2.2 Datasets**
-#### **2.2.1 Video Deepfake Dataset**: 
-- #### **[Face Forensic++](<https://github.com/ondyari/FaceForensics>)**: FaceForensics++ is a forensics dataset consisting of 1000 original video sequences that have been manipulated with four automated face manipulation methods
-- #### **[Celeb-DFv2](<https://github.com/yuezunli/celeb-deepfakeforensics>)**: To date, Celeb-DF includes 590 original videos collected from YouTube with subjects of different ages, ethic groups and genders, and 5639 corresponding DeepFake videos.
-- #### **[TVIL](<https://github.com/ymhzyj/UMMAFormer>)**: A novel temporal video inpainting localization (TVIL) dataset that is specifically tailored for video inpainting scenes.
-#### **2.2.2 Video-Audio Deepfake Dataset**:
-- #### **[DFDC](<https://ai.meta.com/datasets/dfdc/>)**: The DFDC dataset is by far the largest currently publicly-available face swap video dataset, with over 100,000 total clips sourced from 3,426 paid actors, produced with several Deepfake, GAN-based, and non-learned methods.
-- #### **[LAV-DF](<https://github.com/ControlNet/LAV-DF>)**: A content-driven audio-visual deepfake dataset, termed Localized Audio Visual DeepFake, explicitly designed for the task of learning temporal forgery localization. 
-- #### **[FakeAVCeleb](<https://github.com/DASH-Lab/FakeAVCeleb>)**: A novel Audio-Video Multimodal Deepfake Detection dataset, which contains not only deepfake videos but also respective synthesized cloned audios.
-- #### **[Deepfake1MData](<https://github.com/ControlNet/AV-Deepfake1M>)**: The dataset contains content-driven (i) video manipulations, (ii) audio manipulations, and (iii) audio-visual manipulations for more than 2K subjects resulting in a total of more than 1M videos.
+#### **2.2.1 Defect Dataset**: 
+- **[DAGM 2007](<https://hci.iwr.uni-heidelberg.de/node/3616>)**: DAGM 2007 is a synthetic dataset for defect detection on textured surfaces. It contains several categories of image data generated by the defect model.
+- **[MVTec AD](<https://www.mvtec.com/company/research/datasets/mvtec-ad>)**: MVTec AD is a dataset for benchmarking anomaly detection methods with a focus on industrial inspection. It contains over 5000 high-resolution images divided into fifteen different object and texture categories. Each category comprises a set of defect-free training images and a test set of images with various kinds of defects as well as images without defects.
+- **[AITEX](<https://www.kaggle.com/datasets/nexuswho/aitex-fabric-image-database>)**: This dataset consists of 245 4096x256 pixel images with seven different fabric structures. There are 140 non-defect images in the dataset, 20 of each type of fabric. In addition, there are 105 images of different types of fabric defects (12 types) common in the textile industry.
+- More datasets for defect identification are at the following [link](https://github.com/Charmve/Surface-Defect-Detection).
+
+#### **2.2.2 Video Anomaly Event Dataset**:
+- **[UCSD](<http://www.svcl.ucsd.edu/projects/anomaly/dataset.html>)**: The UCSD Anomaly Detection Dataset was a video dataset about the circulation of non pedestrian entities in the walkways and anomalous pedestrian motion patterns. It contains 50 training video samples and 48 testing video samples.
+- **[ADOC](<http://qil.uh.edu/main/datasets/>)**: ADOC is an anomaly event dataset consisting of pedestrian videos captured by a single camera on campus. It contains 875 anomalous events.
+- **[UBnormal](<https://github.com/lilygeorgescu/UBnormal>)**: UBnormal is a new supervised open-set benchmark composed of multiple virtual scenes for video anomaly detection. It introduces abnormal events annotated at the pixel level at training time, for the first time enabling the use of fully-supervised learning methods for abnormal event detection.
+- **[ShanghaiTech](<https://svip-lab.github.io/dataset/campus_dataset.html>)**: Shanghaitech dataset contains a variety of anomalous event datasets in three broad categories: campus, pedestrian, and subway. Further it introduces the anomalies caused by sudden motion such as chasing and brawling in our dataset.
+- **[UCF-Crime](<https://aimagelab.ing.unimore.it/imagelab/page.asp?IdPage=30>)**: UCF-Crime dataset strives for the detection of real-world anomalies such as burglaries and assaults in surveillance videos.
 
 ### **2.3 Preprocessing**
 #### **2.3.1 Extract Frames** 
