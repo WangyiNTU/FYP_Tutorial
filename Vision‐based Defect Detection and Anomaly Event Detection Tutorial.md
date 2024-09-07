@@ -72,7 +72,6 @@ Choose appropriate loss functions for deepfake detection tasks (e.g., cross-entr
 Split your dataset into training, validation, and test sets. Train your model using the training set and validate it using the validation set.
 
 ### **5 Evaluation**
-**For defect detection**
 - Precision and Recall
 - AUC
 - PR-AUC
