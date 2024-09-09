@@ -2,4 +2,4 @@
 
 Please find your topic.
 
-Thanks to other contributors, Sun Haoran, Hu Qiongyang, Zhu Haoyu, and Qin Hao.
+Thanks to the contributors, Sun Haoran, Hu Qiongyang, Zhu Haoyu, and Qin Hao.
