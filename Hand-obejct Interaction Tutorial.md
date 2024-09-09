@@ -26,7 +26,7 @@ Modeling hand and object perception and pose estimation is a complex task that i
 
 Hand pose estimation is similar to human pose estimation, predicting the position of the joints (usually 21 2D/3D keypoints) with a close-up image of the hands.
 
-![image.png](attachment:Images/1.png)
+![image.png](Images/1.png)
 
 Fig1: Visualization of modeling hand with 14, 16 and 21 joints as used in NYU :[1](https://dl.acm.org/doi/10.1145/2629500),
 ICVL :[2](https://ieeexplore.ieee.org/document/6909879), and MSRA :[3](https://ieeexplore.ieee.org/document/6909541) datasets. 
