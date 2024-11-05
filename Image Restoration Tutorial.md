@@ -114,7 +114,7 @@ paper: https://arxiv.org/abs/2204.03883
 
 github: https://arxiv.org/abs/2204.03883
 
-### 1. **Super Resolution**
+### 2. **Super Resolution**
 
 ### [See More Details: Efficient Image Super-Resolution by Experts Mining]
 paper: https://arxiv.org/pdf/2402.03412
