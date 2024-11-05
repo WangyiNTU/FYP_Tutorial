@@ -102,7 +102,8 @@ Run the following script (an example) to test your model.
 ## Reference
 ### For more details, you can refer to the following links.
 
-[1.Image dehazing]
+### 1. **Image Dehazing**
+
 ### [DEA-Net: Single image dehazing based on detail-enhanced convolution and content-guided attention] 
 paper: https://arxiv.org/abs/2301.04805
 
@@ -113,7 +114,8 @@ paper: https://arxiv.org/abs/2204.03883
 
 github: https://arxiv.org/abs/2204.03883
 
-[2.Super resolution]
+### 1. **Super Resolution**
+
 ### [See More Details: Efficient Image Super-Resolution by Experts Mining]
 paper: https://arxiv.org/pdf/2402.03412
 
